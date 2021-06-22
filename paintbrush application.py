@@ -14,7 +14,7 @@ def draw_circle(event,x,y,flags,param):
         drawing = True
     if event == cv.EVENT_MOUSEMOVE:
         if drawing == True:
-             cv.circle(img,(x,y),5,(b,g,r),-1)
+             cv.circle(img,(x,y),radius,(b,g,r),-1)
     elif event == cv.EVENT_LBUTTONUP:
          drawing = False
 
@@ -27,6 +27,7 @@ cv.namedWindow("window")
 cv.createTrackbar("R","window",0,255,nothing)
 cv.createTrackbar("G","window",0,255,nothing)
 cv.createTrackbar("B","window",0,255,nothing)
+cv.createTrackbar("rad","window",0,100,nothing)
 
 cv.namedWindow('image')
 cv.setMouseCallback('image',draw_circle)
@@ -36,6 +37,7 @@ while(1):
     r = cv.getTrackbarPos("R", "window")
     g = cv.getTrackbarPos("G", "window")
     b = cv.getTrackbarPos("B", "window")
+    radius=cv.getTrackbarPos("rad","window")
     print(r, g, b)
     # shows the color chosen using colortracker
     img1[:] = [b, g, r]
