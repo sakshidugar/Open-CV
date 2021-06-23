@@ -1,0 +1,10 @@
+copy and pasting parts of images from one place to other.
+Just by clicking on top-left and bottom-right part of image to be copied and where to be placed
+using mouse event we found coordinates and then used it to copy and paste the parts in image
+
+
+#  suppose coordinates of copied image is (x1copy,y1copy) and (x2copy,y2copy)
+#  and coordinates of region to be paste is (x1paste,y1paste) and (x2paste,y2paste)
+#  then (y2copy-y1copy)==(y2paste-y1paste) and (x2copy-x1copy)==(x2paste-x1paste)
+#  need to be taken care
+#  for that we took diff1 for y-coordinates and diff2 for x-coordinates and compensated it.
